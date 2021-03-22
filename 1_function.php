@@ -6,4 +6,9 @@ function sayHello(){
 
 sayHello();
 
+function testName(String $name) {
+    echo "Hello $name welcome to PHP";
+}
+testName('Zaero Blitz');
+
 ?>
