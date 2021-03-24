@@ -33,6 +33,17 @@
         }
     }
 
+    class Pokemon {
+        var string $pokemonName;
+        var string $pokemonType;
+        var string $trainer = "Zaero Blitz";
+
+        public function __construct(string $pokemonName, string $pokemonType) {
+            $this->pokemonName = $pokemonName;
+            $this->pokemonType = $pokemonType;
+        }
+    }
+
     $ucok = new Person();
     $ucok->firstName = "Ucok";
     $ucok->lastName = "CJ";
@@ -43,6 +54,8 @@
     $test = new Person();
     $test->firstName = "Captain Prince";
     $test->age = 20;
+    
+    $pikachu = new Pokemon("Pikachu", "Lightning");
 ?>
 <body>
     <p><b><?php  echo "Name : {$ucok->firstName} {$ucok->lastName}"; ?></b></p>
@@ -62,6 +75,21 @@
     <p><?php $test->sayHi("Ucok") ?></p>
 
     <br>
+
+    <p>
+        <?php
+            echo "Pokemon Name : {$pikachu->pokemonName}"; ?>
+    </p>
+
+    <p>
+        <?php
+            echo "Pokemon Type : {$pikachu->pokemonType}"; ?>
+    </p>
+
+    <p>
+        <?php 
+            echo "Trainer : {$pikachu->trainer}"; ?>
+    </p>
 
     <b><i><p><?php echo "{$test->authorInfo()}" ?></p></b>
 </body>
