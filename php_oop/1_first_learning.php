@@ -8,6 +8,8 @@
 </head>
 <?php
     class Person {
+        const AUTHOR = "Muzakki Hafizh Setiono";
+
         var string $firstName = "No Name";
         var string $lastName = "";
         var int $age = 0;
@@ -24,6 +26,10 @@
             } else {
                 echo "Hi $name, I'm {$this->firstName} {$this->lastName} Welcome to PHP ";
             }
+        }
+
+        function authorInfo() {
+            echo "Author : " . self::AUTHOR;
         }
     }
 
@@ -54,5 +60,9 @@
     <p><?php  echo "{$test->sayHello("Zaero", "Blitz")}"; ?></p>
     <p><?php $test->sayHi(null) ?></p>
     <p><?php $test->sayHi("Ucok") ?></p>
+
+    <br>
+
+    <b><i><p><?php echo "{$test->authorInfo()}" ?></p></b>
 </body>
 </html>
