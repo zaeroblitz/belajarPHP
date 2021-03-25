@@ -12,6 +12,10 @@
         var string $attack = "Normal Attack";
         var int $damage = 30;
 
+        function run() {
+            echo "{$this->monsterName} is running to you";
+        }
+
         function attack() {
             echo "{$this->monsterName} is attacking you with {$this->attack} taken {$this->damage} heatlh damage";
         }
@@ -22,7 +26,19 @@
         }
     }
 
-    class StoneMonster extends Monster {}
+    class StoneMonster extends Monster {
+        function run() {
+            echo "Stone Monster '{$this->monsterName}' is running to you and prepare to use {$this->attack}";
+        }
+
+        function parentRun() {
+            parent::run();
+        }
+
+        function attack() {
+            echo "Stone Monster '{$this->monsterName}' is attacking you with {$this->attack} taken {$this->damage} health damage";
+        }
+    }
 
     $zubat = new Monster("Zubat", "Wing Attack");
     $golem = new StoneMonster("Golem", "Earthquake");
@@ -34,6 +50,16 @@
             echo "{$zubat->attack()}" ?>
     </p>
 
+    <p>
+        <?php 
+            echo "{$golem->parentRun()}" ?>
+    </p>
+
+    <p>
+        <?php 
+            echo "{$golem->run()}" ?>
+    </p>
+    
     <p>
         <?php 
             echo "{$golem->attack()}" ?>
